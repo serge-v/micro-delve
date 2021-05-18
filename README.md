@@ -1,5 +1,6 @@
 # micro-delve
-Plugin for micro editor to integrate delve golang debugger. Plugin allows to step thru source code in the editor, set breakpoints, view variables.
+Plugin for micro editor to integrate delve golang debugger.
+Plugin allows to step thru source code in the editor, set breakpoints, view variables.
 
 ## Installation
 
@@ -11,9 +12,9 @@ Press Ctrl+E and type command:
 Install delve: https://github.com/go-delve/delve/blob/master/Documentation/installation/README.md
 
 
-## Add key bindings
+## Edit key bindings
 
-Example key bindings:
+Default key bindings:
 
 Start debugging, step over, step out, step in:
 
@@ -31,42 +32,26 @@ Print variable under cursor (Alt-Shift-v):
     "Alt-V": "command: dlv print {w}",
 
 ## Using plugin
-Currently you need 3 terminals to debug a program:
 
-- Program under debugger
-- Delve output
-- Micro with debuggee source code
+Create init.txt file in your project:
 
-## Start program in debugger
-In the new terminal go to the project directory and run dlv in headless mode:
+    breakpoint main.main
+    continue
+
+Run one of the following commands to start debugging:
+
+    dlv-debug      -- start 'dlv debug'
+    dlv-test REGEX -- start 'dlv test -- -test.run REGEX'
+    dlv-connect    -- connects to readless dlv instance
+
+## Start headless dlv instance
+In the new terminal go to the project directory and run:
 
     dlv --headless -l 127.0.0.1:8077 debug
 
-## View debugger output
+## Run dlv command
 
-All commands output goes into /tmp/delve-runner.log file. Start in the new terminal:
-
-    tail -f /tmp/delve-runner.log
-
-## Connect micro to the debugger
-
-Start micro.
-
-Create startup file for delve (init.txt):
-
-    b main.main
-    continue
-    
-Hit Ctrl+E and type command to start debugging:
-
-    dev-debug
-
-Micro will connect to the headless delve (on 127.0.0.1:8077), will play init.txt startup file and should break on main function.
-
-## Run any dlv command
-
-From micro you can run any available dlv command using Ctrl+E.
-Output will be written into /tmp/delve-runner.log file.
+You can run any dlv command in micro prompt.
 
 Command can have a placeholders which substitute upon execution:
 
@@ -74,7 +59,3 @@ Command can have a placeholders which substitute upon execution:
     {s} -- current selection
     {f} -- current file
     {l} -- current line
-
-
-
-
