@@ -15,6 +15,7 @@ function init()
 	config.MakeCommand("dlv-debug", runDebug, config.NoComplete)
 	config.MakeCommand("dlv-test", runTest, config.NoComplete)
 	config.MakeCommand("dlv-connect", runConnect, config.NoComplete)
+	config.AddRuntimeFile("delve", config.RTHelp, "help/delve.md")
 
 	config.TryBindKey("Shift-F5", "command:dlv-debug", false)
 	config.TryBindKey("F5", "command:dlv next", false)
