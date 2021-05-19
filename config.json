@@ -1,5 +1,4 @@
 {
-	"parsecursor": true,
 	"pluginchannels": [
 		"https://raw.githubusercontent.com/serge-v/plugin-channel/master/channel.json"
 	]

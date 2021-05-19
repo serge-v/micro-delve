@@ -1,4 +1,4 @@
-VERSION = "1.0.2"
+VERSION = "1.0.3"
 
 local micro = import("micro")
 local config = import("micro/config")
@@ -61,6 +61,7 @@ function startDelve(bp, args)
 	if logPane ~= nil then
 		logPane:Quit()
 	end
+	bp:HandleCommand("set parsecursor on")
 	bp:HandleCommand("vsplit /tmp/delve-runner.log")
 	logPane = micro.CurPane()
 	micro.CurTab():SetActive(0)
