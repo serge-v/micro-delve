@@ -6,7 +6,7 @@ Plugin allows to step thru source code in the editor, set breakpoints, view vari
 
 Press Ctrl+E and type command:
 
-    plugin install micro-delve
+    plugin install delve
  
 ## Dependencies
 Install delve: https://github.com/go-delve/delve/blob/master/Documentation/installation/README.md

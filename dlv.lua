@@ -1,4 +1,4 @@
-VERSION = "1.0.1"
+VERSION = "1.0.2"
 
 local micro = import("micro")
 local config = import("micro/config")
@@ -64,7 +64,7 @@ function startDelve(bp, args)
 	logPane = micro.CurPane()
 	micro.CurTab():SetActive(0)
 
-	local path = os.Getenv("HOME").."/.config/micro/plug/micro-delve/delve-runner.go"
+	local path = os.Getenv("HOME").."/.config/micro/plug/delve/delve-runner.go"
 	local cmdargs = {"run", path}
 	for k,v in ipairs(args) do
 		table.insert(cmdargs, v)
