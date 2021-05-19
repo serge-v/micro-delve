@@ -42,7 +42,7 @@ Run one of the following commands to start debugging:
 
     dlv-debug      -- start 'dlv debug'
     dlv-test REGEX -- start 'dlv test -- -test.run REGEX'
-    dlv-connect    -- connects to readless dlv instance
+    dlv-connect    -- connect to headless dlv instance
 
 ## Start headless dlv instance
 In the new terminal go to the project directory and run:
