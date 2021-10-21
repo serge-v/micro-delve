@@ -35,7 +35,7 @@ Print variable under cursor (Alt-Shift-v):
 
 Create init.txt file in your project:
 
-    breakpoint main.main
+    break main.main
     continue
 
 Run one of the following commands to start debugging:
